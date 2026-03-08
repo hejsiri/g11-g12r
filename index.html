@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
 <meta charset="UTF-8" />
-<title>Symulator: G12r vs G11</title>
+<title>Porównanie cen prądu: G12r vs G11</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
 <style>
@@ -47,31 +47,26 @@ h1{color:var(--green);margin:0}
   filter:drop-shadow(0 3px 8px rgba(0,0,0,.1));
 }
 .hero-content h1{
+  display:inline-block;
+  position:relative;
   font-size:clamp(24px,2.6vw,36px);
-  letter-spacing:.2px;
-  line-height:1.08;
+  letter-spacing:.1px;
+  line-height:1.12;
+  font-weight:850;
+  color:#1f6f31;
+  text-wrap:balance;
 }
-.hero-tag{
-  margin-top:8px;
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  padding:5px 10px;
-  border-radius:999px;
-  background:#e6f4e8;
-  color:var(--green-dark);
-  border:1px solid #c6dfc9;
-  font-weight:700;
-  font-size:12px;
+.hero-title-energy{
+  color:#1b5e20;
 }
-.hero-tag-dot{
-  width:7px;
-  height:7px;
-  border-radius:50%;
-  background:var(--green-light);
-  box-shadow:0 0 0 3px rgba(56,142,60,.15);
+.hero-title-vs{
+  color:#607d8b;
+  font-size:.68em;
+  font-weight:800;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  margin:0 .24em;
 }
-
 label{display:block;font-weight:700;margin-top:14px;font-size:18px}
 
 .inputs{
@@ -191,7 +186,6 @@ table.expensive .total-row{background-color:#c62828!important}
   }
   .hero-brand img{max-width:150px}
   .hero-content h1{font-size:25px}
-  .hero-tag{justify-content:center}
   .note{padding:8px 10px}
   .inputs{grid-template-columns:1fr}
   table{font-size:14px}
@@ -226,12 +220,7 @@ table.expensive .total-row{background-color:#c62828!important}
       <img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Logo_energa.png" alt="Energa Operator">
     </div>
     <div class="hero-content">
-      <h1>Symulator: G12r vs G11</h1>
-      <div class="hero-tag"><span class="hero-tag-dot" aria-hidden="true"></span>Porównanie kosztu miesięcznego</div>
-      <div class="note">
-        <b>G12r tanio:</b> 22:00–7:00 oraz 13:00–16:00 (codziennie)<br>
-        Wpisz osobno zużycie dla <b>strefy dziennej</b> i <b>nocnej</b>.
-      </div>
+      <h1>Porównanie cen prądu: <span class="hero-title-energy">G12r</span><span class="hero-title-vs">vs</span><span class="hero-title-energy">G11</span></h1>
     </div>
   </div>
 
