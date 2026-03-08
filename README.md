@@ -39,14 +39,6 @@ http://localhost:8000
 
 Możesz otworzyć `index.html` bezpośrednio w przeglądarce, ale licznik odwiedzin nie będzie działał poprawnie bez PHP.
 
-## Publikacja na GitHub
-
-1. W VS Code otwórz zakładkę **Source Control**.
-2. Dodaj pliki do commita.
-3. Wpisz wiadomość commita, np. `add README`.
-4. Kliknij **Commit**.
-5. Kliknij **Publish to GitHub** lub **Push** (jeśli repo już jest podpięte).
-
 ## Uwagi
 
 Wyniki mają charakter orientacyjny i zależą od przyjętych stawek w kodzie (`index.html`).
