@@ -7,8 +7,8 @@ Prosta aplikacja webowa do porównania szacunkowego miesięcznych kosztów energ
 ## Co robi projekt
 
 - porównuje koszt miesięczny dla G12r i G11,
-- pozwala ustawić miesięczne zużycie energii (kWh),
-- pozwala ustawić udział zużycia w tanich godzinach G12r,
+- pozwala wpisać miesięczne zużycie energii osobno dla strefy dziennej i nocnej (kWh),
+- pokazuje procentowy udział stref dzień/noc na pasku gradientowym,
 - pokazuje rozbicie opłat w tabelach dla obu taryf,
 - pokazuje, która taryfa jest tańsza i o ile,
 - zlicza odwiedziny strony (`licznik.php` + `licznik.txt`).
