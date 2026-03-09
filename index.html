@@ -188,7 +188,14 @@ table.expensive th{background-color:#c62828}
 table.cheaper .total-row{background-color:var(--green-light)!important}
 table.expensive .total-row{background-color:#c62828!important}
 #g12rTitle,#g11Title{height:74px;vertical-align:middle}
-.tariff-title-main{display:block;font-size:20px;font-weight:800}
+.tariff-title-main{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:8px;
+  font-size:20px;
+  font-weight:800;
+}
 .tariff-title-sub{display:block;font-size:16px;font-weight:600;opacity:.95;margin-top:2px}
 .warn-icon{
   display:inline-block;
@@ -203,7 +210,7 @@ table.expensive .total-row{background-color:#c62828!important}
   display:inline-flex;
   align-items:center;
   padding:2px 10px;
-  margin-left:6px;
+  margin-left:auto;
   border-radius:999px;
   background:#fff;
   color:var(--green-light);
