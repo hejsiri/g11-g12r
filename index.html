@@ -71,7 +71,7 @@ label{display:block;font-weight:700;margin-top:14px;font-size:18px}
 
 .inputs{
   display:grid;
-  grid-template-columns:1fr 1fr;
+  grid-template-columns:1fr 1fr auto;
   gap:12px;
   align-items:end;
 }
@@ -94,6 +94,31 @@ label{display:block;font-weight:700;margin-top:14px;font-size:18px}
 .unit-label{
   background:#f5f5f5;border:1px solid #dcdcdc;border-left:none;border-radius:0 8px 8px 0;
   padding:0 10px;height:46px;display:flex;align-items:center;font-weight:700;color:#555;font-size:16px;
+}
+.input-total{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  height:46px;
+  padding:0 12px;
+  border:1px solid #244b2a;
+  border-radius:8px;
+  background:#2f5d36;
+  justify-self:end;
+  min-width:170px;
+}
+.input-total-label{
+  font-size:22px;
+  color:#eef7ef;
+  font-weight:700;
+  line-height:1;
+}
+.input-total-value{
+  margin-left:auto;
+  font-size:22px;
+  font-weight:800;
+  color:#ffffff;
+  line-height:1;
 }
 
 .zone-bar{
@@ -217,6 +242,10 @@ table.expensive .total-row{background-color:#c62828!important}
   .note{padding:8px 10px}
   .inputs{grid-template-columns:1fr}
   .input-group{grid-template-columns:1fr;gap:6px}
+  .input-total{
+    justify-self:stretch;
+    min-width:0;
+  }
   table{font-size:14px}
   table th:nth-child(1),table td:nth-child(1){width:38%}
   table th:nth-child(2),table td:nth-child(2){width:25%}
@@ -267,6 +296,10 @@ table.expensive .total-row{background-color:#c62828!important}
         <input type="number" id="nightInput" min="0" max="50000" step="1" value="0" oninput="compute()">
         <span class="unit-label">kWh</span>
       </div>
+    </div>
+    <div class="input-total" aria-live="polite">
+      <span class="input-total-label">Suma:</span>
+      <strong class="input-total-value" id="totalInputKwh">0 kWh</strong>
     </div>
   </div>
 
@@ -429,6 +462,7 @@ function compute(){
   nightInput.value = Math.round(kWhCheap);
   saveInputs(Math.round(kWhExpensive), Math.round(kWhCheap));
   const total = kWhExpensive + kWhCheap;
+  document.getElementById('totalInputKwh').textContent = `${Math.round(total)} kWh`;
   const dayPercent = total > 0 ? (kWhExpensive / total) * 100 : 0;
   const nightPercent = total > 0 ? (kWhCheap / total) * 100 : 0;
   const daySegment = document.getElementById('daySegment');
