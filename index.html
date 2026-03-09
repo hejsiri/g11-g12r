@@ -582,7 +582,7 @@ table.expensive .total-row{background-color:#c62828!important}
 <div class="container">
   <div class="hero">
     <div class="hero-brand">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/Logo_energa.png" alt="Energa Operator">
+      <img id="logoImage" src="assets/logo-energa-light.png" alt="Energa Operator">
     </div>
     <div class="hero-content">
       <h1>Porównanie cen prądu i dystrybucji w taryfach G12r i G11</h1>
@@ -684,6 +684,8 @@ const mwhVal = v => (v / 1000).toFixed(3) + ' MWh';
 const clamp = (v,min,max)=>Math.max(min,Math.min(max,v));
 const STORAGE_KEY = 'g11g12r-inputs-v1';
 const THEME_KEY = 'g11g12r-theme';
+const LOGO_LIGHT = 'assets/logo-energa-light.png';
+const LOGO_DARK = 'assets/logo-energa-dark.png';
 
 function getPreferredTheme(){
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
@@ -693,6 +695,8 @@ function applyTheme(theme){
   document.documentElement.setAttribute('data-theme', theme);
   const themeSwitch = document.getElementById('themeSwitch');
   if (themeSwitch) themeSwitch.checked = theme === 'dark';
+  const logoImage = document.getElementById('logoImage');
+  if (logoImage) logoImage.src = theme === 'dark' ? LOGO_DARK : LOGO_LIGHT;
 }
 
 function initTheme(){
