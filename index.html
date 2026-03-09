@@ -299,6 +299,7 @@ table.expensive .total-row{background-color:#c62828!important}
   </div>
 
   <div class="counter">
+    Ostatnia aktualizacja cen: <span id="lastUpdated">...</span> |
     Liczba odwiedzin: <span id="visitCount">...</span>
   </div>
 </div>
@@ -504,8 +505,21 @@ async function refreshVisitCounter(){
   }
 }
 
+function refreshLastUpdated(){
+  const raw = document.lastModified;
+  const parsed = new Date(raw);
+  const target = document.getElementById('lastUpdated');
+  if (!target) return;
+  if (Number.isNaN(parsed.getTime())){
+    target.textContent = raw || '-';
+    return;
+  }
+  target.textContent = parsed.toLocaleDateString('pl-PL');
+}
+
 loadInputs();
 compute();
+refreshLastUpdated();
 refreshVisitCounter();
 </script>
 </body>
