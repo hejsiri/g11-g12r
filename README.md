@@ -29,7 +29,8 @@ Demo projektu: [www.hejsiri.pl/energa-g11-g12r](https://www.hejsiri.pl/energa-g1
 
 - `index.html` - interfejs aplikacji, logika obliczeń i prezentacja wyników,
 - `licznik.php` - prosty licznik odwiedzin z blokadą pliku,
-- `licznik.txt` - aktualna liczba odwiedzin,
+- `licznik.txt.example` - przykładowy plik startowy z wartością licznika,
+- `licznik.txt` - plik roboczy tworzony automatycznie przez PHP, ignorowany przez Git,
 - `README.md` - opis projektu.
 
 ## Uruchomienie lokalne
@@ -48,6 +49,8 @@ php -S localhost:8000
 ```text
 http://localhost:8000
 ```
+
+Jeśli `licznik.txt` nie istnieje, `licznik.php` utworzy go automatycznie przy pierwszym wywołaniu.
 
 ### Opcja 2 (sam `index.html`)
 
